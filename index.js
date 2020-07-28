@@ -49,6 +49,13 @@ app.get('/about', (req, res) => {
   }); // views contain templates for express
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    projectList: 'The following are my projects'
+  });
+})
+
 app.get('/bad', (req, res) => {
   res.send({
     errorMessage: 'Data not found'
