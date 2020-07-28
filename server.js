@@ -3,9 +3,13 @@ const fs = require('fs');
 const express = require('express');
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000; //so it can run on heroku and locally
+
 // express set up
 let app = express();
-app.listen(3000);
+app.listen(port, () => {
+  console.log(`Listening at ${port}`);
+});
 
 // handle bar set up
 app.set('view engine', 'hbs');
